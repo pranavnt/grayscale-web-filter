@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monochomatica Simulator</title>
+  </head>
+  <script>
+    function updateIFRM() {
+      const URL = document.getElementById("urlInput").value;
+      console.log(URL);
+      document.getElementById("ifrm").src = URL;
+    }
+  </script>
+  <body>
+    <label>Enter URL:</label>
+    <input type="text" id="urlInput" />
+    <button onclick="updateIFRM()">Submit</button>
+    <br />
+    <div style="-webkit-filter: grayscale(100%); filter: grayscale(100%);">
+      <iframe
+        id="ifrm"
+        src="https://www.google.com"
+        width="100%"
+        height="700px"
+      ></iframe>
+    </div>
+  </body>
+</html>
