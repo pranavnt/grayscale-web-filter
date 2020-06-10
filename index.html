@@ -1,9 +1,58 @@
+<!--alt-text-checker-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monochomatica Simulator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        background-color: #ff0d63;
+      }
+
+      p {
+        margin: 0;
+      }
+      #urlInput {
+        height: 40px;
+        width: 750px;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 24px;
+      }
+
+      #submissionDiv {
+        text-align: center;
+      }
+
+      #pageTitle {
+        color: white;
+        text-align: center;
+        font-size: 65px;
+        font-family: "Helvetica";
+        letter-spacing: 2px;
+      }
+
+      #enterURL {
+        color: white;
+        text-align: center;
+        font-size: 25px;
+        font-family: "Helvetica";
+        letter-spacing: 2px;
+      }
+      .fa-circle {
+        color: blue;
+      }
+      #image-button {
+        background: #ccc url("icon.png") no-repeat top left;
+        padding-left: 16px;
+        height: 16px;
+      }
+    </style>
   </head>
   <script>
     function updateIFRM() {
@@ -13,11 +62,30 @@
     }
   </script>
   <body>
-    <label>Enter URL:</label>
-    <input type="text" id="urlInput" />
-    <button onclick="updateIFRM()">Submit</button>
+    <b>
+      <br />
+      <p id="pageTitle">Alt-Text Checker</p>
+      <br />
+      <p id="enterURL">Enter URL</p>
+      <br />
+    </b>
+
+    <div id="submissionDiv">
+      <input type="text" id="urlInput" placeholder="https://example.com" />
+      <button
+        onclick="updateIFRM()"
+        style="border-radius: 100%; height: 40px; width: 40px;"
+        id="image-button"
+        type="submit"
+      >
+        <i class="fa fa-send" style="font-size: 20px; align-self: center;"></i>
+      </button>
+    </div>
     <br />
-    <div style="-webkit-filter: grayscale(100%); filter: grayscale(100%);">
+    <div
+      bottom="25px"
+      style="-webkit-filter: grayscale(100%); filter: grayscale(100%);"
+    >
       <iframe
         id="ifrm"
         src="https://www.google.com"
